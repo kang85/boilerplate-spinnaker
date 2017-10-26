@@ -69,6 +69,8 @@
     "start": "NODE_PATH=src node scripts/start.js",
     "build": "NODE_PATH=src node scripts/build.js",
     "build:backend": "NODE_PATH=src node scripts/build.backend.js",
+    "build:public": "NODE_PATH=src node scripts/build.public.js",
+    "build:all": "npm run build:backend && npm run build:public",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
