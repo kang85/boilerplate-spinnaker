@@ -8365,7 +8365,7 @@ function setWriteHeadHeaders(statusCode) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(__dirname) {
+
 
 var _api = __webpack_require__(59);
 
@@ -8395,7 +8395,8 @@ var path = __webpack_require__(3);
 
 
 // set static path as public
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('./public'));
 // set /api 
 app.use('/api', _api2.default);
 
@@ -8449,7 +8450,6 @@ app.use(function (err, req, res, next) {
 
 // Export your express server so you can import it in the lambda function.
 module.exports = app;
-/* WEBPACK VAR INJECTION */}.call(exports, "/"))
 
 /***/ }),
 /* 59 */
@@ -20826,8 +20826,9 @@ module.exports.eventContext = options => (req, res, next) => {
 var app = __webpack_require__(58);
 var port = 8080;
 
+if (process.env.NODE_ENV == "development") port = "3001";
 app.listen(port);
-console.log('listening on http://localhost:' + port);
+console.log("listening on http://localhost:" + port);
 
 /***/ })
 /******/ ]);

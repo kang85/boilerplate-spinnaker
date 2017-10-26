@@ -7,7 +7,8 @@
     },
     "main": "index.js",
     "scripts": {
-      "start": "node appLocal.js"
+      "start": "node appLocal.js",
+      "local": "NODE_ENV=development node appLocal.js"
     },
     "keywords": [],
     "author": "",

@@ -21,7 +21,8 @@ const path = require('path')
 import api from './api'
 
 // set static path as public
-app.use(express.static(path.join(__dirname, 'public')))
+//app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static('./public'))
 // set /api 
 app.use('/api', api);
 
